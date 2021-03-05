@@ -23,8 +23,17 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -109,28 +118,30 @@ fun MyApp() {
                                 .align(Alignment.BottomCenter)
                                 .padding(bottom = 32.dp)
                         ) {
-                            Button(modifier = Modifier
-                                .padding(8.dp),
+                            Button(
+                                modifier = Modifier
+                                    .padding(8.dp),
                                 onClick = {
                                     timer.cancel()
                                     timer.start()
-                                }) {
+                                }
+                            ) {
                                 Text(text = "Start")
                             }
 
-                            Button(modifier = Modifier
-                                .padding(8.dp),
+                            Button(
+                                modifier = Modifier
+                                    .padding(8.dp),
                                 onClick = {
                                     timer.cancel()
-                                }) {
+                                }
+                            ) {
                                 Text(text = "Stop")
                             }
                         }
                     }
-
                 }
             )
-
         }
     }
 }
